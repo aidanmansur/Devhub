@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>DevHub - Create Account</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <div class="auth-card">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span class="logo-icon">
+                    &lt;/&gt;
+                </span>
+
+                Dev<span>Hub</span>
+
+            </a>
+
+
+            <div class="auth-heading">
+
+                <h1>
+                    Create your account
+                </h1>
+
+                <p>
+                    Join DevHub and start
+                    managing your projects.
+                </p>
+
+            </div>
+
+
+            <form
+                id="registerForm"
+                novalidate
+            >
+
+
+                <!-- Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Aidan Aliyeva"
+                    >
+
+                    <small
+                        id="nameError"
+                        class="error-message"
+                    ></small>
+
+                </div>
+
+
+                <!-- Username -->
+
+                <div class="form-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="aidan"
+                    >
+
+                    <small
+                        id="usernameError"
+                        class="error-message"
+                    ></small>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                    >
+
+                    <small
+                        id="emailError"
+                        class="error-message"
+                    ></small>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Minimum 6 characters"
+                    >
+
+                    <small
+                        id="passwordError"
+                        class="error-message"
+                    ></small>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Repeat your password"
+                    >
+
+                    <small
+                        id="confirmPasswordError"
+                        class="error-message"
+                    ></small>
+
+                </div>
+
+
+                <!-- Terms -->
+
+                <div class="checkbox-group">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                    >
+
+                    <label for="terms">
+
+                        I agree to the
+                        
+                        <a href="#">
+                            Terms of Service
+                        </a>
+
+                        and
+
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+
+                    </label>
+
+                </div>
+
+                <small
+                    id="termsError"
+                    class="error-message"
+                ></small>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Create Account
+                </button>
+
+
+                <!-- Success -->
+
+                <div
+                    id="successMessage"
+                    class="success-message"
+                >
+                    Account created successfully!
+                </div>
+
+            </form>
+
+
+            <p class="auth-footer">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="register.js"></script>
+
+</body>
+
+</html>
