@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>DevHub - Profile</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="dashboard-header">
+
+        <a
+            href="dashboard.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                &lt;/&gt;
+            </span>
+
+            Dev<span>Hub</span>
+
+        </a>
+
+
+        <div class="user-area">
+
+            <a
+                href="dashboard.html"
+                class="profile-back-link"
+            >
+                Dashboard
+            </a>
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         PROFILE PAGE
+    ========================== -->
+
+    <main class="profile-page">
+
+        <div class="profile-container">
+
+
+            <!-- =========================
+                 PROFILE HEADER
+            ========================== -->
+
+            <section class="profile-header-card">
+
+
+                <!-- AVATAR -->
+
+                <div class="profile-avatar">
+
+                    <span id="profileInitial">
+                        U
+                    </span>
+
+                </div>
+
+
+
+                <!-- USER INFORMATION -->
+
+                <div class="profile-header-info">
+
+                    <h1 id="profileUsername">
+                        Username
+                    </h1>
+
+                    <p id="profileEmail">
+                        email@example.com
+                    </p>
+
+                    <p
+                        id="profileBio"
+                        class="profile-bio"
+                    >
+                        No bio yet.
+                    </p>
+
+                </div>
+
+
+
+                <!-- EDIT -->
+
+                <button
+                    id="editProfileButton"
+                    class="submit-button"
+                >
+                    Edit Profile
+                </button>
+
+            </section>
+
+
+
+            <!-- =========================
+                 PROFILE STATS
+            ========================== -->
+
+            <section class="profile-overview-stats">
+
+
+                <div class="profile-overview-stat">
+
+                    <span
+                        id="projectCount"
+                        class="profile-overview-number"
+                    >
+                        0
+                    </span>
+
+                    <span class="profile-overview-label">
+                        Repositories
+                    </span>
+
+                </div>
+
+
+
+                <div class="profile-overview-stat">
+
+                    <span
+                        id="totalStars"
+                        class="profile-overview-number"
+                    >
+                        0
+                    </span>
+
+                    <span class="profile-overview-label">
+                        Stars
+                    </span>
+
+                </div>
+
+
+
+                <div class="profile-overview-stat">
+
+                    <span
+                        id="totalForks"
+                        class="profile-overview-number"
+                    >
+                        0
+                    </span>
+
+                    <span class="profile-overview-label">
+                        Forks
+                    </span>
+
+                </div>
+
+
+
+                <div class="profile-overview-stat">
+
+                    <span
+                        id="languageCount"
+                        class="profile-overview-number"
+                    >
+                        0
+                    </span>
+
+                    <span class="profile-overview-label">
+                        Languages
+                    </span>
+
+                </div>
+
+
+
+                <div class="profile-overview-stat">
+
+                    <span
+                        id="githubCount"
+                        class="profile-overview-number"
+                    >
+                        0
+                    </span>
+
+                    <span class="profile-overview-label">
+                        GitHub Links
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 PROFILE CONTENT
+            ========================== -->
+
+            <div class="profile-grid">
+
+
+                <!-- =========================
+                     PERSONAL INFORMATION
+                ========================== -->
+
+                <section class="profile-card">
+
+                    <div class="profile-card-heading">
+
+                        <h2>
+                            Personal Information
+                        </h2>
+
+                    </div>
+
+
+                    <div class="profile-info-list">
+
+
+                        <div class="profile-info-item">
+
+                            <span class="profile-info-label">
+                                Full Name
+                            </span>
+
+                            <span
+                                id="profileName"
+                                class="profile-info-value"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="profile-info-item">
+
+                            <span class="profile-info-label">
+                                Username
+                            </span>
+
+                            <span
+                                id="profileUsernameInfo"
+                                class="profile-info-value"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="profile-info-item">
+
+                            <span class="profile-info-label">
+                                Email
+                            </span>
+
+                            <span
+                                id="profileEmailInfo"
+                                class="profile-info-value"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================
+                     ACCOUNT ACTIVITY
+                ========================== -->
+
+                <section class="profile-card">
+
+                    <div class="profile-card-heading">
+
+                        <h2>
+                            Account Activity
+                        </h2>
+
+                    </div>
+
+
+                    <div class="profile-activity">
+
+
+                        <div class="profile-activity-item">
+
+                            <span class="activity-icon">
+                                📁
+                            </span>
+
+                            <div>
+
+                                <strong id="activityProjects">
+                                    0 projects
+                                </strong>
+
+                                <span>
+                                    created on DevHub
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="profile-activity-item">
+
+                            <span class="activity-icon">
+                                ⭐
+                            </span>
+
+                            <div>
+
+                                <strong id="activityStars">
+                                    0 stars
+                                </strong>
+
+                                <span>
+                                    received on projects
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="profile-activity-item">
+
+                            <span class="activity-icon">
+                                🍴
+                            </span>
+
+                            <div>
+
+                                <strong id="activityForks">
+                                    0 forks
+                                </strong>
+
+                                <span>
+                                    received on projects
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- =========================
+                 MY REPOSITORIES
+            ========================== -->
+
+            <section class="profile-repositories">
+
+
+                <div class="profile-repositories-header">
+
+                    <div>
+
+                        <h2>
+                            My Repositories
+                        </h2>
+
+                        <p>
+                            Projects created by you.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="dashboard.html"
+                        class="profile-view-all"
+                    >
+                        View all →
+                    </a>
+
+                </div>
+
+
+
+                <div
+                    id="profileProjectsContainer"
+                    class="profile-projects-container"
+                >
+
+                    <!-- Projects will be inserted by JavaScript -->
+
+                </div>
+
+
+
+                <div
+                    id="profileProjectsEmpty"
+                    class="profile-projects-empty"
+                >
+
+                    <div class="profile-empty-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>
+                        No repositories yet
+                    </h3>
+
+                    <p>
+                        Create your first project from the dashboard.
+                    </p>
+
+                    <a
+                        href="dashboard.html"
+                        class="submit-button"
+                    >
+                        Create Project
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 EDIT PROFILE MODAL
+            ========================== -->
+
+            <div
+                id="profileModal"
+                class="modal-overlay"
+            >
+
+                <div class="modal">
+
+
+                    <!-- MODAL HEADER -->
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <h2>
+                                Edit Profile
+                            </h2>
+
+                            <p>
+                                Update your account information.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="closeProfileModal"
+                            class="modal-close"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- PROFILE FORM -->
+
+                    <form
+                        id="profileForm"
+                        novalidate
+                    >
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="form-group">
+
+                            <label for="editName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editName"
+                                placeholder="Your full name"
+                            >
+
+                            <small
+                                id="editNameError"
+                                class="error-message"
+                            ></small>
+
+                        </div>
+
+
+
+                        <!-- USERNAME -->
+
+                        <div class="form-group">
+
+                            <label for="editUsername">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editUsername"
+                                placeholder="Your username"
+                            >
+
+                            <small
+                                id="editUsernameError"
+                                class="error-message"
+                            ></small>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="editEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="editEmail"
+                                placeholder="you@example.com"
+                            >
+
+                            <small
+                                id="editEmailError"
+                                class="error-message"
+                            ></small>
+
+                        </div>
+
+
+
+                        <!-- BIO -->
+
+                        <div class="form-group">
+
+                            <label for="editBio">
+                                Bio
+                            </label>
+
+                            <textarea
+                                id="editBio"
+                                placeholder="Tell us a little about yourself..."
+                                rows="4"
+                            ></textarea>
+
+                            <small class="form-help">
+                                Write a short description about yourself.
+                            </small>
+
+                        </div>
+
+
+
+                        <!-- ACTIONS -->
+
+                        <div class="modal-actions">
+
+                            <button
+                                type="button"
+                                id="cancelProfileButton"
+                                class="cancel-button"
+                            >
+                                Cancel
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                class="submit-button"
+                            >
+                                Save Changes
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         PROFILE JAVASCRIPT
+    ========================== -->
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>

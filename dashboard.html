@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>DevHub - Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="dashboard-header">
+
+        <a
+            href="dashboard.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                &lt;/&gt;
+            </span>
+
+            Dev<span>Hub</span>
+
+        </a>
+
+
+        <div class="user-area">
+
+            <span id="welcomeUser">
+                Welcome
+            </span>
+
+            <a
+                href="profile.html"
+                class="profile-link"
+            >
+                Profile
+            </a>
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN DASHBOARD
+    ========================== -->
+
+    <main class="dashboard">
+
+
+        <!-- =========================
+             DASHBOARD STATISTICS
+        ========================== -->
+
+        <section class="dashboard-stats">
+
+            <div class="dashboard-stat-card">
+
+                <span
+                    id="totalProjects"
+                    class="dashboard-stat-number"
+                >
+                    0
+                </span>
+
+                <span class="dashboard-stat-label">
+                    Total Projects
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <span
+                    id="totalLanguages"
+                    class="dashboard-stat-number"
+                >
+                    0
+                </span>
+
+                <span class="dashboard-stat-label">
+                    Languages
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <span
+                    id="totalGithub"
+                    class="dashboard-stat-number"
+                >
+                    0
+                </span>
+
+                <span class="dashboard-stat-label">
+                    GitHub Projects
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <span
+                    id="totalDemos"
+                    class="dashboard-stat-number"
+                >
+                    0
+                </span>
+
+                <span class="dashboard-stat-label">
+                    Live Demos
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DASHBOARD HEADING
+        ========================== -->
+
+        <section class="dashboard-heading">
+
+            <div>
+
+                <h1>
+                    My Projects
+                </h1>
+
+                <p>
+                    Manage your projects in one place.
+                </p>
+
+            </div>
+
+
+            <button
+                id="addProjectButton"
+                class="submit-button"
+            >
+                + New Project
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================
+             SEARCH & FILTER
+        ========================== -->
+
+        <div class="project-tools">
+
+            <input
+                type="text"
+                id="searchProjects"
+                placeholder="Search projects..."
+            >
+
+
+            <select id="filterLanguage">
+
+                <option value="all">
+                    All Languages
+                </option>
+
+                <option value="JavaScript">
+                    JavaScript
+                </option>
+
+                <option value="HTML/CSS">
+                    HTML/CSS
+                </option>
+
+                <option value="Java">
+                    Java
+                </option>
+
+                <option value="Python">
+                    Python
+                </option>
+
+                <option value="React">
+                    React
+                </option>
+
+                <option value="Node.js">
+                    Node.js
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section
+            id="projectsContainer"
+            class="projects-container"
+        >
+
+            <!-- Projects will be added here by JavaScript -->
+
+        </section>
+
+
+
+        <!-- =========================
+             EMPTY STATE
+        ========================== -->
+
+        <div
+            id="emptyState"
+            class="empty-state"
+        >
+
+            <div class="empty-icon">
+                &lt;/&gt;
+            </div>
+
+
+            <h2>
+                No projects yet
+            </h2>
+
+
+            <p>
+                Create your first project and start building.
+            </p>
+
+
+            <button
+                id="emptyAddProjectButton"
+                class="submit-button"
+            >
+                Create Project
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================
+             PROJECT MODAL
+        ========================== -->
+
+        <div
+            id="projectModal"
+            class="modal-overlay"
+        >
+
+            <div class="project-modal">
+
+
+                <!-- Modal Header -->
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <h2 id="modalTitle">
+                            Create New Project
+                        </h2>
+
+                        <p id="modalDescription">
+                            Add a new project to your DevHub.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="closeModalButton"
+                        class="close-modal"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+
+
+                <!-- Project Form -->
+
+                <form id="projectForm">
+
+
+                    <!-- =========================
+                         PROJECT NAME
+                    ========================== -->
+
+                    <div class="form-group">
+
+                        <label for="projectName">
+                            Project Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="projectName"
+                            placeholder="My awesome project"
+                        >
+
+                        <small
+                            id="projectNameError"
+                            class="error-message"
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         DESCRIPTION
+                    ========================== -->
+
+                    <div class="form-group">
+
+                        <label for="projectDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="projectDescription"
+                            placeholder="What is this project about?"
+                        ></textarea>
+
+                        <small
+                            id="projectDescriptionError"
+                            class="error-message"
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         README EDITOR
+                    ========================== -->
+
+                    <div class="form-group">
+
+                        <label for="projectReadme">
+
+                            README
+
+                            <span class="optional">
+                                Optional
+                            </span>
+
+                        </label>
+
+
+                        <div class="readme-editor">
+
+
+                            <!-- EDITOR HEADER -->
+
+                            <div class="readme-editor-header">
+
+                                <span>
+                                    README.md
+                                </span>
+
+
+                                <span class="readme-editor-status">
+                                    Markdown supported
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- MARKDOWN TEXTAREA -->
+
+                            <textarea
+                                id="projectReadme"
+                                placeholder="# My Project
+
+Write your project documentation here...
+
+## Features
+
+- Feature one
+- Feature two
+- Feature three"
+                                rows="12"
+                            ></textarea>
+
+
+
+                            <!-- PREVIEW -->
+
+                            <div class="readme-preview-container">
+
+                                <div class="readme-preview-header">
+
+                                    <span>
+                                        Preview
+                                    </span>
+
+                                </div>
+
+
+                                <div
+                                    id="readmePreview"
+                                    class="readme-preview"
+                                >
+
+                                    <p>
+                                        Your README preview will appear here.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         PROGRAMMING LANGUAGE
+                    ========================== -->
+
+                    <div class="form-group">
+
+                        <label for="projectLanguage">
+                            Programming Language
+                        </label>
+
+
+                        <select id="projectLanguage">
+
+                            <option value="">
+                                Select a language
+                            </option>
+
+                            <option value="JavaScript">
+                                JavaScript
+                            </option>
+
+                            <option value="HTML/CSS">
+                                HTML/CSS
+                            </option>
+
+                            <option value="Java">
+                                Java
+                            </option>
+
+                            <option value="Python">
+                                Python
+                            </option>
+
+                            <option value="React">
+                                React
+                            </option>
+
+                            <option value="Node.js">
+                                Node.js
+                            </option>
+
+                        </select>
+
+
+                        <small
+                            id="projectLanguageError"
+                            class="error-message"
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         GITHUB REPOSITORY
+                    ========================== -->
+
+                    <div class="form-group">
+
+                        <label for="projectGithub">
+
+                            GitHub Repository
+
+                            <span class="optional">
+                                Optional
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="url"
+                            id="projectGithub"
+                            placeholder="https://github.com/username/project"
+                        >
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         LIVE DEMO
+                    ========================== -->
+
+                    <div class="form-group">
+
+                        <label for="projectDemo">
+
+                            Live Demo
+
+                            <span class="optional">
+                                Optional
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            type="url"
+                            id="projectDemo"
+                            placeholder="https://myproject.com"
+                        >
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         MODAL BUTTONS
+                    ========================== -->
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            id="cancelProjectButton"
+                            class="cancel-button"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            id="projectSubmitButton"
+                            class="submit-button"
+                        >
+                            Create Project
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         DASHBOARD JAVASCRIPT
+    ========================== -->
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
